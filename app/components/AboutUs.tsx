@@ -109,7 +109,7 @@ export default function AboutUs() {
           >
             <div className="relative w-full max-w-full mx-auto">
               <Image 
-                src="/moose-evolution.webp" 
+                src="/moose.webp" 
                 alt="Web Moose Evolution" 
                 width={500} 
                 height={300}

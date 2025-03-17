@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const testimonials = [
   {
@@ -25,17 +27,76 @@ const testimonials = [
   }
 ];
 
+const fadeIn = {
+  hidden: { 
+    opacity: 0,
+    y: 20
+  },
+  visible: { 
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
+};
+
+const cardVariant = {
+  hidden: { 
+    opacity: 0,
+    y: 30,
+    scale: 0.95
+  },
+  visible: { 
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
+
 export default function Testimonials() {
   return (
     <section className="py-20 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">
+        <motion.h2 
+          className="text-4xl font-bold text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeIn}
+        >
           <span className="text-black">Businesses Who </span>
           <span className="text-red-600">Trust Us</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </motion.h2>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={container}
+        >
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-lg border-2 border-[#BB9457]">
+            <motion.div 
+              key={index} 
+              className="bg-white p-8 rounded-xl shadow-lg border-2 border-[#BB9457]"
+              variants={cardVariant}
+            >
               <div className="flex flex-col items-center mb-6">
                 <Link 
                   href={testimonial.website}
@@ -63,9 +124,9 @@ export default function Testimonials() {
                 </div>
               </div>
               <p className="text-[#432818] italic text-center">&quot;{testimonial.quote}&quot;</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

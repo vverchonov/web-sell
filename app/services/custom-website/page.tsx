@@ -1,23 +1,34 @@
+'use client';
+
 import ServiceContactUs from '@/app/components/ServiceContactUs';
+import ServiceLayout from '@/app/components/ServiceLayout';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function CustomWebsite() {
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <main className="pt-16">
-      <div className="bg-white text-black py-8 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold flex items-center gap-3">
-            <Link href="/#services" className="hover:text-red-600 transition-colors">Services</Link>
-            <span className="text-red-600">/</span>
-            <span>Custom Website Development</span>
-          </h1>
-        </div>
+    <ServiceLayout>
+      <div className="max-w-7xl mx-auto">
+        <motion.h1 variants={itemVariants} className="text-4xl font-bold flex items-center gap-3">
+          <Link href="/#services" className="hover:text-red-600 transition-colors">Services</Link>
+          <span className="">/</span>
+          <span className="text-red-600">Custom Website Development</span>
+        </motion.h1>
       </div>
 
       <div className="bg-white py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <motion.div variants={itemVariants}>
               <h2 className="text-3xl font-bold text-black mb-6">What We Offer</h2>
               <ul className="space-y-4">
                 <li className="flex items-start">
@@ -57,8 +68,8 @@ export default function CustomWebsite() {
                   Get Estimate
                 </a>
               </div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={itemVariants}>
               <h2 className="text-3xl font-bold text-black mb-6">Our Development Process</h2>
               <div className="space-y-6">
                 <div className="bg-white border-2 border-red-600 rounded-lg p-6 transition-all duration-300 hover:bg-red-600 group">
@@ -81,12 +92,12 @@ export default function CustomWebsite() {
                   <p className="text-black group-hover:text-white transition-colors">We maintain a lasting relationship with our clients, providing continuous support, updates, and scalability options for your growing business needs.</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
 
       <ServiceContactUs />
-    </main>
+    </ServiceLayout>
   );
 } 

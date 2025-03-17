@@ -1,4 +1,6 @@
+'use client';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -21,16 +23,58 @@ const services = [
   }
 ];
 
+const fadeIn = {
+  hidden: { 
+    opacity: 0,
+    y: 20
+  },
+  visible: { 
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+const cardsContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.4,
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
 export default function Services() {
   return (
     <section id="services" className="py-20 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-black text-center mb-16">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.h2 
+          className="text-4xl font-bold text-black text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeIn}
+        >
+          Our Services
+        </motion.h2>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={cardsContainer}
+        >
           {services.map((service, index) => (
-            <div 
+            <motion.div 
               key={index} 
               className="bg-white p-8 rounded-xl shadow-lg border-2 border-red-600 flex flex-col"
+              variants={fadeIn}
             >
               <h3 className="text-2xl font-semibold mb-4 text-black">
                 {service.title}
@@ -51,9 +95,9 @@ export default function Services() {
               >
                 Learn More
               </Link>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

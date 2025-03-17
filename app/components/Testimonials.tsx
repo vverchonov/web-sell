@@ -8,22 +8,22 @@ const testimonials = [
     company: "Stacked Burger",
     website: "https://www.stackedburger.ca/",
     logo: "/clients/burger.jpg",
-    quote: "Web Moose completely transformed our online presence. Their focus on conversion optimization increased our leads by 150% within the first month!",
-    role: "Marketing Director"
+    quote: "After the website redesign, our bounce rate decreased by 60% and mobile orders increased by 150%. The new modern design and improved user experience has significantly boosted our customer satisfaction.",
+    role: "Operations Manager"
   },
   {
     company: "Fast Banners",
     website: "https://cheapbannersgta.vercel.app/",
     logo: "/clients/fastbanners.webp",
-    quote: "The attention to detail and strategic approach to web design made all the difference. Our e-commerce sales have doubled since the launch.",
-    role: "CEO"
+    quote: "The e-commerce platform they built is exceptional. Our product customization tool increased average order value by 40%, and the streamlined checkout reduced cart abandonment by 45%. Exactly what we needed.",
+    role: "Founder"
   },
   {
     company: "Retail Plus",
     website: "https://www.luxurydesignsigns.com/",
     logo: "/clients/luxury_signs.jpg",
-    quote: "Best investment we've made for our business. The new website has become our primary sales channel, generating 70% of our total revenue.",
-    role: "Operations Manager"
+    quote: "Web Moose developed our website completely from scratch with custom features tailored to our business. The automated quote system and project management integration increased our lead conversion by 85% while saving hours of manual work.",
+    role: "Digital Marketing Director"
   }
 ];
 

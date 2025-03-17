@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web Moose - Professional Web Development Agency Website
 
-## Getting Started
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This is the official website for Web Moose, a professional web development agency specializing in custom websites, e-commerce solutions, and website redesigns. The website is built using modern web technologies to showcase our services and portfolio.
+
+## 🚀 Features
+
+- **Modern Design**: Built with Next.js 14 and Tailwind CSS for a sleek, responsive interface
+- **Performance Optimized**: Implements best practices for loading speed and SEO
+- **Interactive UI**: Smooth scrolling, animated components, and intuitive navigation
+- **Responsive Layout**: Fully responsive design that works perfectly on all devices
+- **Service Showcases**: Detailed pages for each of our core services
+- **Contact Integration**: Multiple contact points with form integration
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 14 (React)
+- **Styling**: Tailwind CSS
+- **Typography**: Spectral (Google Fonts)
+- **Deployment**: Vercel
+- **Language**: TypeScript
+
+## 🌟 Core Services
+
+1. **Custom Website Development**
+   - Tailor-made websites
+   - Mobile responsive design
+   - SEO setup
+   - Analytics integration
+
+2. **E-commerce Solutions**
+   - Product management
+   - Secure payments
+   - Inventory system
+   - Order tracking
+
+3. **Website Redesign**
+   - Modern updates
+   - Performance optimization
+   - Content migration
+   - SEO preservation
+
+## 📦 Project Structure
+
+```
+web-sell/
+├── app/
+│   ├── components/
+│   │   ├── Navigation.tsx
+│   │   ├── Services.tsx
+│   │   ├── AboutUs.tsx
+│   │   └── ...
+│   ├── services/
+│   │   ├── custom-website/
+│   │   ├── ecommerce/
+│   │   └── redesign/
+│   └── page.tsx
+├── public/
+│   └── assets/
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+```bash
+git clone [repository-url]
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Learn More
+3. Run the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📞 Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For any inquiries about this project or our services:
+- Email: contact.webmoose@gmail.com
+- Phone: +1 (437) 981-3239
+- Website: [Web Moose](https://webmoose.ca)
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is part of Web Moose's portfolio. All rights reserved.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+Built with ❤️ by Web Moose

@@ -1,4 +1,5 @@
 import ServiceContactUs from '@/app/components/ServiceContactUs';
+import Link from 'next/link';
 
 export default function Ecommerce() {
   return (
@@ -6,7 +7,7 @@ export default function Ecommerce() {
       <div className="bg-white text-black py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold flex items-center gap-3">
-            <a href="/#services" className="hover:text-red-600 transition-colors">Services</a>
+            <Link href="/#services" className="hover:text-red-600 transition-colors">Services</Link>
             <span className="text-red-600">/</span>
             <span>E-commerce Solutions</span>
           </h1>
@@ -30,7 +31,7 @@ export default function Ecommerce() {
                   <span className="text-black mr-2">✓</span>
                   <div>
                     <h3 className="font-semibold text-red-600">Secure Payment Integration</h3>
-                    <p className="text-black">Integration with trusted payment gateways and implementation of robust security measures to protect your customers' data.</p>
+                    <p className="text-black">Integration with trusted payment gateways and implementation of robust security measures to protect your customers&apos; data.</p>
                   </div>
                 </li>
                 <li className="flex items-start">

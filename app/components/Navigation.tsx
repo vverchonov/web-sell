@@ -42,7 +42,7 @@ export default function Navigation() {
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth"
+          behavior: 'smooth'
         });
       }
     } else {
@@ -61,7 +61,7 @@ export default function Navigation() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: 'smooth'
       });
     }
     setIsMenuOpen(false);

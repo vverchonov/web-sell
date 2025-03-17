@@ -8,9 +8,9 @@ export default function AboutUs() {
           <div className="flex-1">
             <h2 className="text-4xl font-bold mb-6 text-black">About <span className="text-red-600">Web Moose</span></h2>
             <p className="text-black text-lg mb-8">
-              At Web Moose, we're more than just web developers – we're your digital growth partners. 
-              Since 2021, we've been crafting websites that don't just look beautiful but actively 
-              work to grow our clients' businesses. Our approach combines creative design with 
+              At Web Moose, we&apos;re more than just web developers – we&apos;re your digital growth partners. 
+              Since 2021, we&apos;ve been crafting websites that don&apos;t just look beautiful but actively 
+              work to grow our clients&apos; businesses. Our approach combines creative design with 
               data-driven strategies to deliver websites that truly sell.
             </p>
             <div className="grid grid-cols-3 gap-8 text-center">

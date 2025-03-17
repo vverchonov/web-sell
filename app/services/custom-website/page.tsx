@@ -1,4 +1,5 @@
 import ServiceContactUs from '@/app/components/ServiceContactUs';
+import Link from 'next/link';
 
 export default function CustomWebsite() {
   return (
@@ -6,7 +7,7 @@ export default function CustomWebsite() {
       <div className="bg-white text-black py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold flex items-center gap-3">
-            <a href="/#services" className="hover:text-red-600 transition-colors">Services</a>
+            <Link href="/#services" className="hover:text-red-600 transition-colors">Services</Link>
             <span className="text-red-600">/</span>
             <span>Custom Website Development</span>
           </h1>

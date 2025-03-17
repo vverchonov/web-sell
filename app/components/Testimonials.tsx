@@ -62,7 +62,7 @@ export default function Testimonials() {
                   <p className="text-[#99582A]">{testimonial.role}</p>
                 </div>
               </div>
-              <p className="text-[#432818] italic text-center">"{testimonial.quote}"</p>
+              <p className="text-[#432818] italic text-center">&quot;{testimonial.quote}&quot;</p>
             </div>
           ))}
         </div>

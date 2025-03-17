@@ -5,8 +5,8 @@ export default function ServiceContactUs() {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-black mb-6">Ready to <span className="text-red-600">Get Started</span></h2>
           <p className="text-black/80 text-xl max-w-3xl mx-auto">
-            Let's turn your vision into reality. Whether you prefer a quick call, email, or detailed message - 
-            we're here to help you take the next step towards your digital success.
+            Let&apos;s turn your vision into reality. Whether you prefer a quick call, email, or detailed message - 
+            we&apos;re here to help you take the next step towards your digital success.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function ServiceContactUs() {
             {/* <div className="text-center mb-6">
               <h3 className="text-xl font-semibold text-white mb-2">Send Us a Message</h3>
               <p className="text-white/90">
-                Share the details of your project and we'll get back to you within 24 hours
+                Share the details of your project and we&apos;ll get back to you within 24 hours
               </p>
             </div> */}
             <form className="space-y-6 text-left">

@@ -1,4 +1,5 @@
 import ServiceContactUs from '@/app/components/ServiceContactUs';
+import Link from 'next/link';
 
 export default function Redesign() {
   return (
@@ -6,7 +7,7 @@ export default function Redesign() {
       <div className="bg-white text-black py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold flex items-center gap-3">
-            <a href="/#services" className="hover:text-red-600 transition-colors">Services</a>
+            <Link href="/#services" className="hover:text-red-600 transition-colors">Services</Link>
             <span className="text-red-600">/</span>
             <span>Website Redesign</span>
           </h1>
@@ -23,7 +24,7 @@ export default function Redesign() {
                   <span className="text-black mr-2">✓</span>
                   <div>
                     <h3 className="font-semibold text-red-600">Complete Website Analysis</h3>
-                    <p className="text-black">Thorough assessment of your current website's performance, user experience, and conversion rates to identify improvement areas.</p>
+                    <p className="text-black">Thorough assessment of your current website&apos;s performance, user experience, and conversion rates to identify improvement areas.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -62,7 +63,7 @@ export default function Redesign() {
               <div className="space-y-6">
                 <div className="bg-white border-2 border-red-600 rounded-lg p-6 transition-all duration-300 hover:bg-red-600 group">
                   <h3 className="font-semibold text-black group-hover:text-white transition-colors">1. Website Audit</h3>
-                  <p className="text-black group-hover:text-white transition-colors">Comprehensive analysis of your current website's strengths and weaknesses, including technical, visual, and content aspects.</p>
+                  <p className="text-black group-hover:text-white transition-colors">Comprehensive analysis of your current website&apos;s strengths and weaknesses, including technical, visual, and content aspects.</p>
                 </div>
 
                 <div className="bg-white border-2 border-red-600 rounded-lg p-6 transition-all duration-300 hover:bg-red-600 group">

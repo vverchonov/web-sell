@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const benefits = [
   {
@@ -96,6 +97,21 @@ export default function WhyChooseUs() {
               <p className="text-black group-hover:text-white transition-colors">{benefit.description}</p>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div 
+          className="text-center mt-12"
+          variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <Link 
+            href="/#services"
+            className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-lg hover:scale-105"
+          >
+            View Our Services
+          </Link>
         </motion.div>
       </div>
     </section>

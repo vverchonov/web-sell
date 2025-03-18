@@ -1,5 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
+import { useState, FormEvent } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const fadeIn = {
   hidden: { 
@@ -42,9 +45,92 @@ const container = {
   }
 };
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export default function ServiceContactUs() {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Check if email is provided and valid
+      if (!formData.email) {
+        throw new Error('Please provide your email address');
+      }
+
+      // Check if email is valid
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        throw new Error('Please enter a valid email address');
+      }
+
+      // Send the form data to our API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message. Please try again later.');
+      }
+
+      // Success toast
+      toast.success('Message sent successfully! We\'ll get back to you soon.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+
+    } catch (error) {
+      // Error toast
+      toast.error(error instanceof Error ? error.message : 'Something went wrong. Please try again.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   return (
     <div id="contact" className="bg-white py-20 px-4">
+      <ToastContainer />
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2 
@@ -125,25 +211,32 @@ export default function ServiceContactUs() {
             variants={fadeIn}
             transition={{ delay: 0.4 }}
           >
-            <form className="space-y-6 text-left">
+            <form onSubmit={handleSubmit} className="space-y-6 text-left">
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
                   Name
                 </label>
                 <input 
-                  type="text" 
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-white border-2 border-white text-black placeholder-black/60 focus:border-white focus:ring-2 focus:ring-white/20 transition-all"
-                  placeholder="Your name"
+                  placeholder="Your name (optional)"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
-                  Email
+                  Email <span className="text-white/80">*</span>
                 </label>
                 <input 
-                  type="email" 
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-white border-2 border-white text-black placeholder-black/60 focus:border-white focus:ring-2 focus:ring-white/20 transition-all"
                   placeholder="your@email.com"
+                  required
                 />
               </div>
               <div>
@@ -151,16 +244,21 @@ export default function ServiceContactUs() {
                   Message
                 </label>
                 <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={4} 
                   className="w-full px-4 py-3 rounded-lg bg-white border-2 border-white text-black placeholder-black/60 focus:border-white focus:ring-2 focus:ring-white/20 transition-all"
-                  placeholder="Tell us about your project..."
+                  placeholder="Tell us about your project (optional)"
                 ></textarea>
               </div>
               <button 
-                type="submit" 
-                className="w-full bg-white text-red-600 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-red-700 hover:text-white border-2 border-white"
+                disabled={isSubmitting}
+                className={`w-full bg-white text-red-600 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-red-700 hover:text-white border-2 border-white ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </motion.div>
